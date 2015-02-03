@@ -1,0 +1,151 @@
+<!-- http://www.codingeverything.com/2014/02/BootstrapDocsSideBar.html
+ http://getbootstrap.com/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>  Tutorial - Fence </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+	<script type="text/JavaScript" src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/JavaScript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/JavaScript" src="js/functions.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" id='nav'>
+		  <div class="container" >
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="index.html">FENCE</a>
+			</div>
+			<div>
+			  <ul class="nav navbar-nav">
+				<li><a class="active" href="tutorial.html">Get Started</a></li>
+			  </ul>
+			 <div>
+				<img class= "navbar-right" src="img/fence.png" id='fencelogo'>
+			 </div>
+			</div>
+		  </div>
+		</nav>
+		<div class="jumbotron masthead" id='jumbotrontutorial'>
+			<div class="container">
+				<h1>FENCE</h1>
+				<br>
+				<p>Learn how to use FENCE</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<nav class=" col-md-3 bs-docs-sidebar">
+					<ul class="nav nav-stacked" id="sidebar">
+
+						<li>
+							<a class="a" href="#js-getting-to-know">Conhecendo o FENCE</a>
+						</li>
+						<li>
+							<a class="a" href="#js-technologies">Tecnologias</a>
+						</li>
+
+						<!--<li>
+							<a class='a' href="#js-overview">Overview</a>
+						</li>
+						<li>
+							<a class='a' href="#js-transitions" >Transitions</a>
+						</li>
+						<li>
+							<a class='a' href="#js-modals">Modals</a>
+						</li>
+						<li>
+							<a  class='a' href="#js-dropdown">Dropdown</a>
+						</li>
+						<li>
+							<a class='a' href="#js-tag">Tag</a>
+						</li>-->
+						<li>
+							<a class='a' href="#top"><b>Back to top</b></a>
+						</li>
+					</ul>
+				</nav>
+				<div class="col-md-9" role="main">
+					<div class="bs-docs-section">
+						<h1 id="js-getting-to-know" class="page-header">Conhecendo o FENCE</h1>
+						<h3 id="js-server-access">Acessando o servidor</h3>
+						<p>
+							Para acessar o servidor via ssh:
+							<pre>ssh atglance@lxplus.cern.ch</pre>
+							Uma instância do FENCE que podemos usar para aprender está no diretório <code>~/www/stage-lucas/</code>
+							<pre>cd ~/www/stage-lucas/</pre>
+						</p><br />
+
+                                                                        <p>
+                                                                            <h4>Dica:</h4>
+                                                                            Um editor usado por linha de comando bem simples é o Nano. Por exemplo, para abrir um arquivo, use "nano configuration.json".
+                                                                            (Pode-se fazer o download e editar os arquivos localmente. Porém, por facilidade de ver o resultado no navegador, é preferível alterar remotamente via ssh...)
+                                                                        </p>
+
+						<h3 id="js-organization">Organização dos diretórios</h3>
+						<p>
+							Dentro deste diretório haverá duas pastas, <strong>fence</strong> e <strong>atlas</strong>.  <br />
+							Na pasta <strong>fence</strong>, estão todos os arquivos necessários para se ter um sistema FENCE rodando. <br />
+							Na pasta <strong>atlas</strong>, os arquivos necessários para fazer a integração com os dados do experimento Atlas. <small>(No lugar da mesma poderia ser usado uma extensão para o sistema Alice, LHCb...)</small>
+							<br /><br />
+
+							Pode-se visualizar o resultado via web, através das seguintes URLs: <br />
+							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/atlas" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/atlas</a> - corresponde ao diretório <code>~/www/stage-lucas/atlas/</code><br />
+							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/fence" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/fence</a> - corresponde ao diretório <code>~/www/stage-lucas/fence/</code>
+						</p><br />
+
+						<h3 id="js-important-files">Alguns arquivos importantes</h3>
+						<dl>
+							<dt>~/www/stage-lucas/fence/configuration.json</dt>
+							<dd>Define variáveis utilizadas em vários outros arquivos. Neste arquivo é "montado o sistema em si", quais diretórios existirão, quem poderá acessar cada nivel... Se um diretório não contiver o seu arquivo <strong>configuration.json</strong>, o arquivo <strong>configuration.json</strong> do diretório acima será usado.
+							Por exemplo, se acessarmos <code>https://atglance.web.cern.ch/atglance/stage-lucas/atlas/appointment/</code>, terá precedência o arquivo <code>~/www/stage-lucas/atlas/appointment/configuration.json</code>. Se este não existir, será usado o arquivo <code>~/www/stage-lucas/atlas/configuration.json</code></dd>
+							<br />
+							<dt>~/www/stage-lucas/fence/environments.json</dt>
+							<dd>Define os ambientes de desenvolvimento.</dd>
+							<br />
+							<dt>~/www/stage-lucas/atlas/.htacess</dt>
+							<dd>Além de outras configurações, como o modo de autenticação de usuário e conexão com o BD, define qual ambiente de desenvolvimento está em operação.</dd>
+							<br />
+							<dt>~/www/stage-lucas/fence/menu.json</dt>
+							<dd>Através deste arquivo é possível alterar os links que são exibidos na página, neste caso, em <a href="https://atglance.web.cern.ch/atglance/stage-lucas/fence/" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/fence/</a>.</dd>
+						</dl>
+					</div>
+					<div class="bs-docs-section">
+						<h1 id="js-technologies" class="page-header">Tecnologias</h1>
+						<h3 id="js-tecnologias-a-estudar">Tecnologias a estudar</h3>
+						<p>
+							<ul>
+								<li>
+									Linux
+									<ul>
+										<li><a href="http://lifehacker.com/learn-linux-with-this-free-edx-course-from-the-linux-fo-1612770920" target="_blank">http://lifehacker.com/learn-linux-with-this-free-edx-course-from-the-linux-fo-1612770920</a></li>
+									</ul>
+								<li>
+									GIT - distributed revision control system
+								<li>
+									JIRA - Issue & Project Tracking Software
+								<li>
+									PHP
+									<ul>
+										<li><a href="https://phpunit.de/presentations.html" target="_blank">PHPUnit</a></li>
+									</ul>
+								</li>
+								<li>Diversos cursos online:
+									<ul>
+										<li><a href="http://www.w3schools.com/" target="_blank">W3schools</a></li>
+										<li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+										<li><a href="http://www.codecademy.com/" target="_blank">Code Academy</a></li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright-footer">
+			<p class='pfooter'>Copyright 2015 © <strong>FENCE</strong>. Developed by <strong><a target="_blank">Gabriela and Lucas</a></strong></p>
+		</div>
+	</body>
+</html>

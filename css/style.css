@@ -1,0 +1,60 @@
+#nav  {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+#jumbotrontutorial {
+	background-color: #99CC66;
+}
+
+#jumbotronindex {
+	background-color: #99CC66;
+	padding: 150px 0;
+}
+
+#fencelogo{
+	height: 29px;
+	width: 41px;
+	margin-right: -80px;
+	margin-top: 10px;
+}
+
+.pfooter{
+	margin-top: 40px;
+	text-align: center;
+}
+
+/* sidebar */
+.bs-docs-sidebar {
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bs-docs-sidebar .nav>.active>a {
+    color: #99CC66;
+	border-left-color: #99CC66
+}
+
+/* all links */
+.bs-docs-sidebar .nav>li>a {
+    color: #999;
+    padding: 4px 20px;
+    font-size: 15px;
+    font-weight: 400;
+	border-left: 2px solid transparent;
+}
+
+/* active & hover links */
+.bs-docs-sidebar .nav>li>a:hover,
+.bs-docs-sidebar .nav>li>a:focus {
+    color: #99CC66;
+    text-decoration: none;
+    background-color: transparent;
+    border-left-color: #99CC66;
+}
+/* all active links */
+.bs-docs-sidebar .nav>.active:hover>a,
+.bs-docs-sidebar .nav>.active:focus>a {
+    font-weight: 700;
+}
