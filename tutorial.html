@@ -71,30 +71,38 @@
 				<div class="col-md-9" role="main">
 					<div class="bs-docs-section">
 						<h1 id="js-getting-to-know" class="page-header">Conhecendo o FENCE</h1>
+						<h3 id="js-server-access">Acessando na Web</h3>
+						<p>
+							A página principal do FENCE está localizada em <a href="https://atglance.web.cern.ch/atglance/fence/" target="_blank">https://atglance.web.cern.ch/atglance/fence</a>.
+						</p>
+						<a href="prints/acessando-na-web.png" target="_blank" class="printscreen"><img class="img-thumbnail" src="prints/acessando-na-web.png" /></a>
+
 						<h3 id="js-server-access">Acessando o servidor</h3>
 						<p>
 							Para acessar o servidor via ssh:
 							<pre>ssh atglance@lxplus.cern.ch</pre>
-							Uma instância do FENCE que podemos usar para aprender está no diretório <code>~/www/stage-lucas/</code>
+							A URL <code>https://atglance.web.cern.ch/atglance/fence</code> corresponde ao diretório <code>~/www/fence</code>.
+						</p>
+						<p>
+							Uma instância do FENCE que pode ser usada para aprender está localizada no diretório <code>~/www/stage-lucas/</code>.
 							<pre>cd ~/www/stage-lucas/</pre>
-						</p><br />
+						</p>
+						<a href="prints/acessando-o-servidor.png" target="_blank" class="printscreen"><img class="img-thumbnail" src="prints/acessando-o-servidor.png" /></a>
+
 
                                                                         <p>
-                                                                            <h4>Dica:</h4>
-                                                                            Um editor usado por linha de comando bem simples é o Nano. Por exemplo, para abrir um arquivo, use "nano configuration.json".
+                                                                            <strong>Dica:</strong> Um editor usado por linha de comando bem simples é o Nano. Por exemplo, para abrir um arquivo, use "nano configuration.json".
                                                                             (Pode-se fazer o download e editar os arquivos localmente. Porém, por facilidade de ver o resultado no navegador, é preferível alterar remotamente via ssh...)
                                                                         </p>
 
 						<h3 id="js-organization">Organização dos diretórios</h3>
 						<p>
-							Dentro deste diretório haverá duas pastas, <strong>fence</strong> e <strong>atlas</strong>.  <br />
-							Na pasta <strong>fence</strong>, estão todos os arquivos necessários para se ter um sistema FENCE rodando. <br />
-							Na pasta <strong>atlas</strong>, os arquivos necessários para fazer a integração com os dados do experimento Atlas. <small>(No lugar da mesma poderia ser usado uma extensão para o sistema Alice, LHCb...)</small>
+							Dentro deste diretório haverá duas pastas, <strong>fence</strong> e <strong>atlas</strong>.  Na pasta <strong>fence</strong>, estão todos os arquivos necessários para se ter um sistema FENCE rodando. Na pasta <strong>atlas</strong>, os arquivos necessários para fazer a integração com os dados do experimento Atlas. <small>(No lugar da mesma poderia ser usado uma extensão para o sistema Alice, LHCb...)</small>
 							<br /><br />
 
 							Pode-se visualizar o resultado via web, através das seguintes URLs: <br />
-							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/atlas" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/atlas</a> - corresponde ao diretório <code>~/www/stage-lucas/atlas/</code><br />
-							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/fence" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/fence</a> - corresponde ao diretório <code>~/www/stage-lucas/fence/</code>
+							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/atlas" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/atlas</a> - corresponde ao diretório <code>~/www/stage-lucas/atlas/</code>.<br />
+							<a href="https://atglance.web.cern.ch/atglance/stage-lucas/fence" target="_blank">https://atglance.web.cern.ch/atglance/stage-lucas/fence</a> - corresponde ao diretório <code>~/www/stage-lucas/fence/</code>.
 						</p><br />
 
 						<h3 id="js-important-files">Alguns arquivos importantes</h3>
@@ -102,7 +110,7 @@
 							<dt>~/www/stage-lucas/fence/configuration.json</dt>
 							<dd>Define variáveis utilizadas em vários outros arquivos. Neste arquivo é "montado o sistema em si", quais diretórios existirão, quem poderá acessar cada nivel... Se um diretório não contiver o seu arquivo <strong>configuration.json</strong>, o arquivo <strong>configuration.json</strong> do diretório acima será usado.
 							Por exemplo, se acessarmos <code>https://atglance.web.cern.ch/atglance/stage-lucas/atlas/appointment/</code>, terá precedência o arquivo <code>~/www/stage-lucas/atlas/appointment/configuration.json</code>. Se este não existir, será usado o arquivo <code>~/www/stage-lucas/atlas/configuration.json</code></dd>
-							<br />
+							<a href="prints/arquivos-importantes-1.png" target="_blank" class="printscreen"><img class="img-thumbnail" src="prints/arquivos-importantes-1.png" /></a>
 							<dt>~/www/stage-lucas/fence/environments.json</dt>
 							<dd>Define os ambientes de desenvolvimento.</dd>
 							<br />
